@@ -25,7 +25,10 @@ keys.addEventListener('click', e => {
     const content = key.textContent
     const disp = display.textContent
 
-    // number key
+    // delete pressed effect
+    Array.from(key.parentNode.children).forEach(k => k.classList.remove('is-depressed'))
+
+    // number keys
     if(!action) {
         if(disp === '0' || calculator.dataset.previouskey === 'operator'){
             display.textContent = content
