@@ -2068,11 +2068,11 @@ asm["_malloc"] = function() {
   return real__malloc.apply(null, arguments);
 };
 
-var real__multiple = asm["_multiple"];
-asm["_multiple"] = function() {
+var real__multiply = asm["_multiply"];
+asm["_multiply"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return real__multiple.apply(null, arguments);
+  return real__multiply.apply(null, arguments);
 };
 
 var real__sbrk = asm["_sbrk"];
@@ -2165,10 +2165,10 @@ var _memset = Module["_memset"] = function() {
   return Module["asm"]["_memset"].apply(null, arguments)
 };
 
-var _multiple = Module["_multiple"] = function() {
+var _multiply = Module["_multiply"] = function() {
   assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
   assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-  return Module["asm"]["_multiple"].apply(null, arguments)
+  return Module["asm"]["_multiply"].apply(null, arguments)
 };
 
 var _sbrk = Module["_sbrk"] = function() {
