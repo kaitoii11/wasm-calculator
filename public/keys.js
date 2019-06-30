@@ -27,14 +27,12 @@ keys.addEventListener('click', e => {
 
     // number key
     if(!action) {
-        console.log(content)
-        console.log(disp)
         if(disp === '0' || calculator.dataset.previouskey === 'operator'){
             display.textContent = content
         } else {
             display.textContent = disp + content
-            previouskey = content
         }
+        previouskey = content
     } else if (
         action === 'add' ||
         action === 'subtract' ||
@@ -49,6 +47,7 @@ keys.addEventListener('click', e => {
     } else if ( action === 'decimal') {
     } else if ( action === 'clear') {
         display.textContent = '0'
+        calculator.dataset.previouskey = action
 
     } else if ( action === 'calculate') {
         const val1 = calculator.dataset.val1
